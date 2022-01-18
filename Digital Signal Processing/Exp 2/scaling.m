@@ -1,0 +1,28 @@
+clc;
+clear all;
+close all;
+%Scaling of signal
+k=3;
+x1=[5 2 7 9 4];
+n = 0:1:4;
+a=length(x1);
+subplot(3,1,1);
+stem(x1, n);
+xlabel('Number of samples');
+ylabel('Amplitude');
+title('Input signal ---->');
+x2=k*x1;
+subplot(3,1,2);
+stem(x2);
+xlabel('Number of samples');
+ylabel('Amplitude');
+title('Amplified signal ---->');
+x3=x1/k;
+subplot(3,1,3);
+stem(x3);
+xlabel('Number of samples');
+ylabel('Amplitude');
+title('Attenuated signal ---->');
+display(x1);
+display(x2);
+display(x3);

@@ -1,0 +1,25 @@
+%y(n)+1/2y(n-1)+1/3y(n-2)=x(n)
+clc;
+clear all;
+close all;
+b=[1];
+a=[1;1/2;1/3];
+h=impz(a,b,4);
+disp('Impulse response h(n)');
+disp(h);
+n1=0:1:length(h)-1;
+subplot(2,1,1);
+stem(n1,h);
+xlabel('Discrete Time(n1) ------->');
+ylabel('x(n)');
+title('Impulse response h(n)');
+x=[1,2];
+y=conv(h,x);
+disp('output y(n)');
+disp(y);
+n2=0:1:length(y)-1;
+subplot(2,1,2);
+stem(n2,y);
+xlabel('Discrete Time(n2) ------->');
+ylabel('Amplitude');
+title('Output  y(n)');

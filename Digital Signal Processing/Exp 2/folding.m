@@ -1,0 +1,23 @@
+clc;
+clear all;
+close all;
+%Folding or Flipping of Sequence
+x=input('Enter the sequence: ');
+a=length(x);
+n=1:1:a;
+subplot(2,1,1);
+stem(n,x);
+xlabel('Number of samples');
+ylabel('Amplitude');
+title('Input signal');
+m=-a:1:-1;
+y=x(a-n+1);
+subplot(2,1,2);
+stem(m,y);
+xlabel('Number of samples');
+ylabel('Amplitude');
+title('Folded signal');
+display(x);
+display(y);
+display(n);
+display(m);
